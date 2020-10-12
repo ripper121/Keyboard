@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-09-03T07:48:18Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "pr0board_main"
+        },
+        "Owner": "Stefan Schreiter <sts@zwave.eu>",
+        "Size": {
+            "X": 86.36,
+            "Y": 49.53
+        }
+    }
+}
