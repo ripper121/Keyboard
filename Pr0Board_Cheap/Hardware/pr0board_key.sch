@@ -4422,14 +4422,14 @@ W = angled&lt;p&gt;
 <part name="SV2" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA05-1" device="" package3d_urn="urn:adsk.eagle:package:8332/1" override_package3d_urn="urn:adsk.eagle:package:22968115/3" override_package_urn="urn:adsk.eagle:footprint:8283/1"/>
 <part name="SV3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA05-1" device="" package3d_urn="urn:adsk.eagle:package:8332/1" override_package3d_urn="urn:adsk.eagle:package:22968115/3" override_package_urn="urn:adsk.eagle:footprint:8283/1"/>
 <part name="SV4" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA05-1" device="" package3d_urn="urn:adsk.eagle:package:8332/1" override_package3d_urn="urn:adsk.eagle:package:22968115/3" override_package_urn="urn:adsk.eagle:footprint:8283/1"/>
+<part name="LED1" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
+<part name="LED2" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
+<part name="LED3" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="LED4" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="LED5" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="LED6" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="LED7" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="LED8" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
-<part name="LED9" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
-<part name="LED10" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
-<part name="LED11" library="adafruit" deviceset="WS2812B" device="3535" override_package3d_urn="urn:adsk.eagle:package:22982386/2" override_package_urn="urn:adsk.eagle:footprint:22982387/1" override_locally_modified="yes"/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND28" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND29" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -4529,14 +4529,14 @@ W = angled&lt;p&gt;
 <attribute name="VALUE" x="99.06" y="102.87" size="1.778" layer="96" rot="R90"/>
 <attribute name="NAME" x="80.518" y="102.87" size="1.778" layer="95" rot="R90"/>
 </instance>
-<instance part="LED4" gate="G$1" x="33.02" y="71.12" smashed="yes"/>
-<instance part="LED5" gate="G$1" x="66.04" y="71.12" smashed="yes"/>
-<instance part="LED6" gate="G$1" x="96.52" y="71.12" smashed="yes"/>
-<instance part="LED7" gate="G$1" x="127" y="71.12" smashed="yes"/>
-<instance part="LED8" gate="G$1" x="33.02" y="33.02" smashed="yes"/>
-<instance part="LED9" gate="G$1" x="66.04" y="33.02" smashed="yes"/>
-<instance part="LED10" gate="G$1" x="96.52" y="33.02" smashed="yes"/>
-<instance part="LED11" gate="G$1" x="127" y="33.02" smashed="yes"/>
+<instance part="LED1" gate="G$1" x="33.02" y="71.12" smashed="yes"/>
+<instance part="LED2" gate="G$1" x="66.04" y="71.12" smashed="yes"/>
+<instance part="LED3" gate="G$1" x="96.52" y="71.12" smashed="yes"/>
+<instance part="LED4" gate="G$1" x="127" y="71.12" smashed="yes"/>
+<instance part="LED5" gate="G$1" x="33.02" y="33.02" smashed="yes"/>
+<instance part="LED6" gate="G$1" x="66.04" y="33.02" smashed="yes"/>
+<instance part="LED7" gate="G$1" x="96.52" y="33.02" smashed="yes"/>
+<instance part="LED8" gate="G$1" x="127" y="33.02" smashed="yes"/>
 <instance part="GND27" gate="1" x="33.02" y="58.42" smashed="yes">
 <attribute name="VALUE" x="30.48" y="55.88" size="1.778" layer="96"/>
 </instance>
@@ -4683,35 +4683,35 @@ W = angled&lt;p&gt;
 <pinref part="SV3" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="LED4" gate="G$1" pin="GND"/>
+<pinref part="LED1" gate="G$1" pin="GND"/>
 <pinref part="GND27" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED5" gate="G$1" pin="GND"/>
+<pinref part="LED2" gate="G$1" pin="GND"/>
 <pinref part="GND28" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED6" gate="G$1" pin="GND"/>
+<pinref part="LED3" gate="G$1" pin="GND"/>
 <pinref part="GND29" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED7" gate="G$1" pin="GND"/>
+<pinref part="LED4" gate="G$1" pin="GND"/>
 <pinref part="GND30" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED8" gate="G$1" pin="GND"/>
+<pinref part="LED5" gate="G$1" pin="GND"/>
 <pinref part="GND31" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED9" gate="G$1" pin="GND"/>
+<pinref part="LED6" gate="G$1" pin="GND"/>
 <pinref part="GND32" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED10" gate="G$1" pin="GND"/>
+<pinref part="LED7" gate="G$1" pin="GND"/>
 <pinref part="GND33" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED11" gate="G$1" pin="GND"/>
+<pinref part="LED8" gate="G$1" pin="GND"/>
 <pinref part="GND34" gate="1" pin="GND"/>
 </segment>
 </net>
@@ -4914,7 +4914,7 @@ W = angled&lt;p&gt;
 <label x="68.58" y="193.04" size="1.778" layer="95" rot="R270"/>
 </segment>
 <segment>
-<pinref part="LED4" gate="G$1" pin="DI"/>
+<pinref part="LED1" gate="G$1" pin="DI"/>
 <wire x1="20.32" y1="68.58" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
 <label x="17.78" y="68.58" size="1.778" layer="95" rot="R180"/>
 </segment>
@@ -4926,67 +4926,67 @@ W = angled&lt;p&gt;
 <pinref part="SV4" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="LED11" gate="G$1" pin="DO"/>
+<pinref part="LED8" gate="G$1" pin="DO"/>
 <wire x1="139.7" y1="30.48" x2="144.78" y2="30.48" width="0.1524" layer="91"/>
 <label x="144.78" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="LED4" gate="G$1" pin="DO"/>
-<pinref part="LED5" gate="G$1" pin="DI"/>
+<pinref part="LED1" gate="G$1" pin="DO"/>
+<pinref part="LED2" gate="G$1" pin="DI"/>
 <wire x1="45.72" y1="68.58" x2="53.34" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="LED5" gate="G$1" pin="DO"/>
-<pinref part="LED6" gate="G$1" pin="DI"/>
+<pinref part="LED2" gate="G$1" pin="DO"/>
+<pinref part="LED3" gate="G$1" pin="DI"/>
 <wire x1="78.74" y1="68.58" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="LED6" gate="G$1" pin="DO"/>
-<pinref part="LED7" gate="G$1" pin="DI"/>
+<pinref part="LED3" gate="G$1" pin="DO"/>
+<pinref part="LED4" gate="G$1" pin="DI"/>
 <wire x1="109.22" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="LED8" gate="G$1" pin="DO"/>
+<pinref part="LED5" gate="G$1" pin="DO"/>
 <wire x1="45.72" y1="30.48" x2="53.34" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="LED9" gate="G$1" pin="DI"/>
+<pinref part="LED6" gate="G$1" pin="DI"/>
 </segment>
 </net>
 <net name="N$14" class="0">
 <segment>
-<pinref part="LED9" gate="G$1" pin="DO"/>
-<pinref part="LED10" gate="G$1" pin="DI"/>
+<pinref part="LED6" gate="G$1" pin="DO"/>
+<pinref part="LED7" gate="G$1" pin="DI"/>
 <wire x1="78.74" y1="30.48" x2="83.82" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
-<pinref part="LED10" gate="G$1" pin="DO"/>
-<pinref part="LED11" gate="G$1" pin="DI"/>
+<pinref part="LED7" gate="G$1" pin="DO"/>
+<pinref part="LED8" gate="G$1" pin="DI"/>
 <wire x1="109.22" y1="30.48" x2="114.3" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="WSVCC" class="0">
 <segment>
-<pinref part="LED4" gate="G$1" pin="VDD"/>
+<pinref part="LED1" gate="G$1" pin="VDD"/>
 <wire x1="38.1" y1="86.36" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="LED5" gate="G$1" pin="VDD"/>
+<pinref part="LED2" gate="G$1" pin="VDD"/>
 <wire x1="71.12" y1="86.36" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="LED6" gate="G$1" pin="VDD"/>
+<pinref part="LED3" gate="G$1" pin="VDD"/>
 <wire x1="101.6" y1="86.36" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
 <junction x="71.12" y="91.44"/>
-<pinref part="LED7" gate="G$1" pin="VDD"/>
+<pinref part="LED4" gate="G$1" pin="VDD"/>
 <wire x1="132.08" y1="86.36" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="LED8" gate="G$1" pin="VDD"/>
+<pinref part="LED5" gate="G$1" pin="VDD"/>
 <wire x1="38.1" y1="48.26" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="53.34" x2="71.12" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
@@ -4997,13 +4997,13 @@ W = angled&lt;p&gt;
 <wire x1="101.6" y1="91.44" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
 <junction x="101.6" y="91.44"/>
 <junction x="132.08" y="91.44"/>
-<pinref part="LED9" gate="G$1" pin="VDD"/>
+<pinref part="LED6" gate="G$1" pin="VDD"/>
 <wire x1="71.12" y1="48.26" x2="71.12" y2="53.34" width="0.1524" layer="91"/>
 <junction x="71.12" y="53.34"/>
-<pinref part="LED10" gate="G$1" pin="VDD"/>
+<pinref part="LED7" gate="G$1" pin="VDD"/>
 <wire x1="101.6" y1="48.26" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
 <junction x="101.6" y="53.34"/>
-<pinref part="LED11" gate="G$1" pin="VDD"/>
+<pinref part="LED8" gate="G$1" pin="VDD"/>
 <wire x1="132.08" y1="48.26" x2="132.08" y2="53.34" width="0.1524" layer="91"/>
 <junction x="132.08" y="53.34"/>
 <wire x1="38.1" y1="91.44" x2="38.1" y2="93.98" width="0.1524" layer="91"/>
@@ -5018,12 +5018,12 @@ W = angled&lt;p&gt;
 </net>
 <net name="DODI" class="0">
 <segment>
-<pinref part="LED8" gate="G$1" pin="DI"/>
+<pinref part="LED5" gate="G$1" pin="DI"/>
 <wire x1="20.32" y1="30.48" x2="17.78" y2="30.48" width="0.1524" layer="91"/>
 <label x="17.78" y="30.48" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="LED7" gate="G$1" pin="DO"/>
+<pinref part="LED4" gate="G$1" pin="DO"/>
 <wire x1="139.7" y1="68.58" x2="144.78" y2="68.58" width="0.1524" layer="91"/>
 <label x="144.78" y="68.58" size="1.778" layer="95"/>
 </segment>
