@@ -15,16 +15,17 @@
 #define KEY_S_5     7
 #define KEY_S_6     8
 #define LEDPWM      9
-#define WS2812BDI  10
-#define S12        MOSI
-#define ST2        MISO
-#define S22        SCK
-#define KEY_S_7    A0
-#define KEY_S_8    A1
-#define KEY_S_4    A2
-#define KEY_S_3    A3
+#define WS2812BDI   10
+#define S12         MOSI
+#define ST2         MISO
+#define S22         SCK
+#define KEY_S_7     A0
+#define KEY_S_8     A1
+#define KEY_S_4     A2
+#define KEY_S_3     A3
+#define DEBOUNCE    50
 
-Adafruit_NeoPixel ws2812b = Adafruit_NeoPixel(8, WS2812BDI, NEO_GRB + NEO_KHZ800);  
+Adafruit_NeoPixel ws2812b = Adafruit_NeoPixel(8, WS2812BDI, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
@@ -62,7 +63,7 @@ byte ledCounter = 0;
 int colors = 0;
 unsigned long previousMillis = 0;
 const long interval = 1;
-
+bool updownCount = false;
 
 void loop()
 {
@@ -87,21 +88,21 @@ void loop()
   if (!digitalRead(S11)) {
     Serial.println("S11");
     Consumer.write(MEDIA_VOLUME_DOWN);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(S11)) {}
     Consumer.release(MEDIA_VOLUME_DOWN);
   }
   if (!digitalRead(ST1)) {
     Serial.println("ST1");
     Consumer.write(MEDIA_VOLUME_MUTE);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(ST1)) {}
     Consumer.release(MEDIA_VOLUME_MUTE);
   }
   if (!digitalRead(S21)) {
     Serial.println("S21");
     Consumer.press(MEDIA_VOLUME_UP);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(S21)) {}
     Consumer.release(MEDIA_VOLUME_UP);
   }
@@ -110,21 +111,21 @@ void loop()
   if (!digitalRead(S12)) {
     Serial.println("S12");
     Consumer.press(MEDIA_PREV);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(S12)) {}
     Consumer.release(MEDIA_PREV);
   }
   if (!digitalRead(ST2)) {
     Serial.println("ST2");
     Consumer.press(MEDIA_PLAY_PAUSE);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(ST2)) {}
     Consumer.release(MEDIA_PLAY_PAUSE);
   }
   if (!digitalRead(S22)) {
     Serial.println("S22");
     Consumer.press(MEDIA_NEXT);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(S22)) {}
     Consumer.release(MEDIA_NEXT);
   }
@@ -133,7 +134,7 @@ void loop()
   if (!digitalRead(KEY_S_5)) {
     Serial.println("KEY_S_5");
     Keyboard.press(KEY_LEFT);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_5)) {}
     Keyboard.release(KEY_LEFT);
   }
@@ -141,71 +142,97 @@ void loop()
   if (!digitalRead(KEY_S_6)) {
     Serial.println("KEY_S_6");
     Keyboard.press(KEY_DOWN);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_6)) {}
     Keyboard.release(KEY_DOWN);
   }
   if (!digitalRead(KEY_S_7)) {
     Serial.println("KEY_S_7");
     Keyboard.press(KEY_RIGHT);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_7)) {}
     Keyboard.release(KEY_RIGHT);
   }
   if (!digitalRead(KEY_S_8)) {
     Serial.println("KEY_S_8");
     Keyboard.press(KEYPAD_SUBTRACT);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_8)) {}
     Keyboard.release(KEYPAD_SUBTRACT);
   }
   if (!digitalRead(KEY_S_4)) {
     Serial.println("KEY_S_4");
     Keyboard.press(KEYPAD_ADD);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_4)) {}
     Keyboard.release(KEYPAD_ADD);
   }
   if (!digitalRead(KEY_S_3)) {
     Serial.println("KEY_S_3");
     Keyboard.press(KEY_F);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_3)) {}
     Keyboard.release(KEY_F);
   }
   if (!digitalRead(KEY_S_2)) {
     Serial.println("KEY_S_2");
     Keyboard.press(KEY_UP);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_2)) {}
     Keyboard.release(KEY_UP);
   }
   if (!digitalRead(KEY_S_1)) {
     Serial.println("KEY_S_1");
     Keyboard.press(KEY_F5);
-    delay(100);
+    delay(DEBOUNCE);
     while (!digitalRead(KEY_S_1)) {}
     Keyboard.release(KEY_F5);
   }
 
-  ws2812b.setPixelColor(ledCounter, Wheel(((ledCounter * 256 / ws2812b.numPixels()) + colors) & 255));
-  ws2812b.show();
+
+  ws2812b.setPixelColor(ledCounter, ws2812b.Color(colors, (colors > 170? colors - 170: 0), 0));
   if (currentMillis - previousMillis >= interval) {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
     if (ledCounter > 8) {
-      if (colors > 256 * 5) {
-        colors = 0;
-      } else {
-        colors++;
+      if (colors >= 255) {
+        updownCount = false;
       }
+      if (colors <= 85) {
+        updownCount = true;
+      }
+
+      if (updownCount)
+        colors++;
+      else
+        colors--;
 
       ledCounter = 0;
     } else {
       ledCounter++;
     }
   }
-  
+
+  if (false) {
+    ws2812b.setPixelColor(ledCounter, Wheel(((ledCounter * 256 / ws2812b.numPixels()) + colors) & 255));
+
+    if (currentMillis - previousMillis >= interval) {
+      // save the last time you blinked the LED
+      previousMillis = currentMillis;
+      if (ledCounter > 8) {
+        if (colors > 256 * 5) {
+          colors = 0;
+        } else {
+          colors++;
+        }
+
+        ledCounter = 0;
+      } else {
+        ledCounter++;
+      }
+    }
+  }
+  ws2812b.show();
 }
 
 // Input a value 0 to 255 to get a color value.
