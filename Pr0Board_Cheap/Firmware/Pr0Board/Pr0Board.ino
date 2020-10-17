@@ -85,11 +85,11 @@ void loop()
   }
 
 
-  if (!digitalRead(S11)) {
-    Serial.println("S11");
+  if (!digitalRead(S21)) {
+    Serial.println("S21");
     Consumer.write(MEDIA_VOLUME_DOWN);
     delay(DEBOUNCE);
-    while (!digitalRead(S11)) {}
+    while (!digitalRead(S21)) {}
     Consumer.release(MEDIA_VOLUME_DOWN);
   }
   if (!digitalRead(ST1)) {
@@ -99,20 +99,20 @@ void loop()
     while (!digitalRead(ST1)) {}
     Consumer.release(MEDIA_VOLUME_MUTE);
   }
-  if (!digitalRead(S21)) {
-    Serial.println("S21");
+  if (!digitalRead(S11)) {
+    Serial.println("S11");
     Consumer.press(MEDIA_VOLUME_UP);
     delay(DEBOUNCE);
-    while (!digitalRead(S21)) {}
+    while (!digitalRead(S11)) {}
     Consumer.release(MEDIA_VOLUME_UP);
   }
 
 
-  if (!digitalRead(S12)) {
-    Serial.println("S12");
+  if (!digitalRead(S22)) {
+    Serial.println("S22");
     Consumer.press(MEDIA_PREV);
     delay(DEBOUNCE);
-    while (!digitalRead(S12)) {}
+    while (!digitalRead(S22)) {}
     Consumer.release(MEDIA_PREV);
   }
   if (!digitalRead(ST2)) {
@@ -122,11 +122,11 @@ void loop()
     while (!digitalRead(ST2)) {}
     Consumer.release(MEDIA_PLAY_PAUSE);
   }
-  if (!digitalRead(S22)) {
-    Serial.println("S22");
+  if (!digitalRead(S12)) {
+    Serial.println("S12");
     Consumer.press(MEDIA_NEXT);
     delay(DEBOUNCE);
-    while (!digitalRead(S22)) {}
+    while (!digitalRead(S12)) {}
     Consumer.release(MEDIA_NEXT);
   }
 
