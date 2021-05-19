@@ -1,0 +1,31 @@
+[submodule "Pr0Board_Cheap/Firmware/32u4_hexuploader"]
+	path = Pr0Board_Cheap/Firmware/32u4_hexuploader
+	url = https://github.com/uriba107/32u4_hexuploader
+[submodule "Pr0Board_Cheap/Firmware/libraries/Adafruit_NeoPixel"]
+	path = Pr0Board_Cheap/Firmware/libraries/Adafruit_NeoPixel
+	url = https://github.com/adafruit/Adafruit_NeoPixel
+[submodule "Pr0Board_Cheap/Firmware/libraries/HID"]
+	path = Pr0Board_Cheap/Firmware/libraries/HID
+	url = https://github.com/NicoHood/HID
+[submodule "Pr0Board_Cheap/Firmware/libraries/MIDIUSB"]
+	path = Pr0Board_Cheap/Firmware/libraries/MIDIUSB
+	url = https://github.com/arduino-libraries/MIDIUSB
+[submodule "Pr0Board_Cheap/Firmware/libraries/HID-Project"]
+	path = Pr0Board_Cheap/Firmware/libraries/HID-Project
+	url = https://github.com/NicoHood/HID
+[submodule "Pr0Board/Firmware/libraries/Adafruit_NeoPixel"]
+	path = Pr0Board/Firmware/libraries/Adafruit_NeoPixel
+	url = https://github.com/adafruit/Adafruit_NeoPixel
+	branch = master
+[submodule "Pr0Board/Firmware/libraries/MIDIUSB"]
+	path = Pr0Board/Firmware/libraries/MIDIUSB
+	url = https://github.com/arduino-libraries/MIDIUSB
+	branch = master
+[submodule "Pr0Board/Firmware/libraries/HID-Project"]
+	path = Pr0Board/Firmware/libraries/HID-Project
+	url = https://github.com/NicoHood/HID
+	branch = master
+[submodule "Pr0Board/Firmware/32u4_hexuploader"]
+	path = Pr0Board/Firmware/32u4_hexuploader
+	url = https://github.com/uriba107/32u4_hexuploader
+	branch = master
