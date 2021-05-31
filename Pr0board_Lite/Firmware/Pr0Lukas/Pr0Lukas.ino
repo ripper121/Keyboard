@@ -87,17 +87,8 @@ void setButton(byte num) {
 }
 
 byte getButton() {
-  //randomSeed(millis());
-  while (true) {
-    byte rKey = readKey();
-    setButton(rKey); //set led for pressed button
-    //wait for Key release
-    while (readKey() == rKey) {
-      delay(20);
-    }
-    setButton(-1); //clear Leds
-    return rKey;
-  }
+  byte rKey = readKey();
+  return rKey;
 }
 
 int readADC() {
@@ -158,12 +149,54 @@ void setup() {
   analogReference(DEFAULT);
 
   LED.setOutput(PIN);
-  ledSetAll(0, 0, 0);
+  ledSetAll(128, 128, 128);
   LED.sync(); // Sends the value to the LED
   delay(1000);
 }
 
+int timeoutSpeed = 1000;
+
 void loop()
 {
-  getButton();
+  bool timedout = false, wrongButton = true;
+  int timeoutCounter = 0;
+  byte rndButton = (random(8) + 1);
+  setButton(0);
+  delay(1);
+  setButton(rndButton);
+
+  while (true) {
+    byte button = getButton();
+
+    if (button > 0) {
+      if (button == rndButton) {
+        setButton(0);
+        while (getButton() == rndButton) {}
+        timedout = false;
+        wrongButton = false;
+        break;
+      } else {
+        timedout = false;
+        wrongButton = true;
+        break;
+      }
+    }
+
+    if (timeoutCounter >= timeoutSpeed)
+    {
+      timedout = true;
+      break;
+    }
+    timeoutCounter++;
+  }
+
+  if (timedout || wrongButton) {
+    timeoutSpeed = 1000;
+    ledSetAll(255, 0, 0);
+    LED.sync();
+    delay(1000);
+  } else {
+    timeoutSpeed -= 10;
+  }
+
 }
