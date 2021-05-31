@@ -40,12 +40,13 @@
 
 byte simonSays[255]; //ATTENTION if you set this array to high count then the game will crash!
 byte simonCount = 0;
+float brightness = 0.5;
 
 WS2812 LED(NUMPIXELS);
 
 void ledSetAll(byte r, byte g, byte b) {
   cRGB value;
-  value.r = r; value.g = g; value.b = b;
+  value.r = r * brightness; value.g = g * brightness; value.b = b * brightness;
   for (byte i = 0; i < NUMPIXELS; i++) {
     LED.set_crgb_at(i, value); // Set value at LED found at index 0
   }
@@ -53,7 +54,7 @@ void ledSetAll(byte r, byte g, byte b) {
 
 void ledSet(byte led, byte r, byte g, byte b) {
   cRGB value;
-  value.r = r; value.g = g; value.b = b;
+  value.r = r * brightness; value.g = g * brightness; value.b = b * brightness;
   LED.set_crgb_at(led, value); // Set value at LED found at index 0
 }
 
@@ -72,16 +73,16 @@ void setButton(byte num) {
       ledSet(3, 255, 255, 0);
       break;
     case 5:
-      ledSet(4, 0, 255, 255);
+      ledSet(4, random(255), random(255), random(255));
       break;
     case 6:
-      ledSet(5, 0, 255, 255);
+      ledSet(5, random(255), random(255), random(255));
       break;
     case 7:
-      ledSet(7, 0, 255, 255);
+      ledSet(7, random(255), random(255), random(255));
       break;
     case 8:
-      ledSet(6, 0, 255, 255);
+      ledSet(6, random(255), random(255), random(255));
       break;
   }
   LED.sync();
@@ -196,6 +197,20 @@ void showSequence() {
   delay(SHOW_DELAY);
 }
 
+void initLeds() {
+  cRGB value;
+  ledSet(0, 0, 0, 255);
+  ledSet(1, 0, 0, 255);
+  ledSet(2, 0, 0, 255);
+  ledSet(3, 0, 0, 255);
+  value.r = 10; value.g = 10; value.b = 10;
+  LED.set_crgb_at(4, value);
+  value.r = 255; value.g = 255; value.b = 255;
+  LED.set_crgb_at(5, value);
+  ledSet(6, 255, 0, 0);
+  ledSet(7, 0, 255, 0);
+  LED.sync();
+}
 
 void setup() {
   pinMode(1, OUTPUT);
@@ -203,13 +218,32 @@ void setup() {
   analogReference(DEFAULT);
 
   LED.setOutput(PIN);
-  ledSetAll(100, 100, 100);
-  ledSet(6, 255, 0, 0);
-  ledSet(7, 0, 255, 0);
-  LED.sync();
+  initLeds();
   byte gButton = 0;
   while (gButton == 0) {
     gButton = getButton();
+  }
+  if ((gButton == 5 || gButton == 6)) {
+    while (true) {
+      if (gButton == 5) {
+        brightness -= 0.025;
+        if (brightness <= 0) {
+          brightness = 0.025;
+        }
+        initLeds();
+      }
+      if (gButton == 6) {
+        brightness += 0.025;
+        if (brightness >= 1) {
+          brightness = 1;
+        }
+        initLeds();
+      }
+      if (!(gButton == 5 || gButton == 6 || gButton == 0)) {
+        break;
+      }
+      gButton = getButton();
+    }
   }
   if (gButton == 7) {
     simonCount = EEPROM.read(0);
