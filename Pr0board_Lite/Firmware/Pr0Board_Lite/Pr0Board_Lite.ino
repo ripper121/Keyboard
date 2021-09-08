@@ -5,7 +5,7 @@
 #define S2 708
 #define S3 462
 #define S4 235
-#define S5 880
+#define S5 870
 #define S6 658
 #define S7 406
 #define S8 196
